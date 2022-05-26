@@ -19,6 +19,10 @@ const buttonCreate = document.querySelector(".button-create");
 
 const raceSelect = document.getElementsByName("race-select");
 
+const table = document.querySelector(".table-saved-person");
+
+// const string = document.get
+
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
 
 const a = "Терентий";
@@ -34,9 +38,41 @@ const h = "Пушистый хвост";
 // При нажатии на кнопку "Создать!" :
 
 const start = () => {
+  createHero();
+  createTr();
+  // pushHeroToTable();
+  // pushHeroToArr();
+
   // Создаём новый экземпляр класса FantasyHero
+  // Создаём новую строку в таблице
   // Отправляем данные в таблицу
   // сохраняем экземпляр в массив heroes
+};
+
+const createHero = () => {
+  const hero1 = new FantasyHero(a, b, c, d, e, f, g, h);
+  console.log(heroes);
+  console.log("Cоздан новый герой!");
+};
+
+const createTr = () => {
+  console.log("Тут будет новая строка таблицы!");
+  const tr = document.createElement("tr");
+  tr.innerHTML =
+    "<td>Имя</td>  <td>Возраст</td>  <td>Пол</td>  <td>Раса</td>  <td>Внешние особенности</td>  <td>Характер</td>  <td>История</td>  <td>Способность</td>  <td>Содержимое карманов</td>  <td><button>Удалить</button></td>";
+  table.append(tr);
+  const nodeTd = tr.querySelectorAll("td");
+  // const td1 = nodeTd.querySelector("td")[0];
+  // const td2 = arrTd.querySelector("td")[1];
+  // const td3 = arrTd.querySelector("td")[2];
+  // const td4 = arrTd.querySelector("td")[3];
+  // const td5 = arrTd.querySelector("td")[4];
+  // const td6 = arrTd.querySelector("td")[5];
+  // const td7 = arrTd.querySelector("td")[6];
+  // const td8 = arrTd.querySelector("td")[7];
+  // const td9 = arrTd.querySelector("td")[8];
+  console.log(nodeTd);
+  console.log(nodeTd[0]);
 };
 
 class Person {
@@ -77,9 +113,7 @@ class FantasyHero extends Person {
   // - Из localstorage
 }
 
-const hero1 = new FantasyHero(a, b, c, d, e, f, g, h);
-
-console.log(heroes);
+buttonCreate.addEventListener("click", start);
 
 // console.log(Person);
 // console.log(FantasyHero);
