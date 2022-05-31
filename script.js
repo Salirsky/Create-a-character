@@ -20,6 +20,7 @@ const buttonCreate = document.querySelector(".button-create");
 const raceSelect = document.getElementsByName("race-select");
 
 const table = document.querySelector(".table-saved-person");
+const tableTr = document.querySelector("tr");
 
 // const string = document.get
 
@@ -27,7 +28,7 @@ let heroes = []; // массив объектов, где каждый объе�
 
 const a = "Терентий";
 const b = "90";
-const c = "male";
+const c = "Мужчина";
 const d = "Характер паскудный";
 const e =
   "Все думали, там умер дед, но дед не умирал! Ему 90, он не помнит стоп-слово :D";
@@ -39,7 +40,7 @@ const h = "Пушистый хвост";
 
 const start = () => {
   createHero();
-  createTr();
+  // createTr();
   // pushHeroToTable();
   // pushHeroToArr();
 
@@ -50,31 +51,32 @@ const start = () => {
 };
 
 const createHero = () => {
-  const hero1 = new FantasyHero(a, b, c, d, e, f, g, h);
-  console.log(heroes);
-  console.log("Cоздан новый герой!");
-};
-
-const createTr = () => {
-  console.log("Тут будет новая строка таблицы!");
-  const tr = document.createElement("tr");
-  tr.innerHTML =
-    "<td>Имя</td>  <td>Возраст</td>  <td>Пол</td>  <td>Раса</td>  <td>Внешние особенности</td>  <td>Характер</td>  <td>История</td>  <td>Способность</td>  <td>Содержимое карманов</td>  <td><button>Удалить</button></td>";
-  table.append(tr);
-  const nodeTd = tr.querySelectorAll("td");
-  // const td1 = nodeTd.querySelector("td")[0];
-  // const td2 = arrTd.querySelector("td")[1];
-  // const td3 = arrTd.querySelector("td")[2];
-  // const td4 = arrTd.querySelector("td")[3];
-  // const td5 = arrTd.querySelector("td")[4];
-  // const td6 = arrTd.querySelector("td")[5];
-  // const td7 = arrTd.querySelector("td")[6];
-  // const td8 = arrTd.querySelector("td")[7];
-  // const td9 = arrTd.querySelector("td")[8];
+  // Создаём нового героя
+  const newHero = new FantasyHero(a, b, c, d, e, f, g, h);
+  // Отправляем нового героя в массив героев
+  heroes.push(newHero);
+  // Клонируем строку в таблице
+  const cloneTr = tableTr.cloneNode(true);
+  // Добавляем клон строки в таблицу
+  table.append(cloneTr);
+  const nodeTd = cloneTr.querySelectorAll("td");
   console.log(nodeTd);
-  console.log(nodeTd[0]);
+  nodeTd[0].innerText = newHero.name;
+  nodeTd[1].innerText = newHero.age;
+  nodeTd[2].innerText = newHero.gender;
+  nodeTd[3].innerText = newHero.race;
+  nodeTd[4].innerText = newHero.look;
+  nodeTd[5].innerText = newHero.character;
+  nodeTd[6].innerText = newHero.history;
+  nodeTd[7].innerText = newHero.skill;
+  nodeTd[8].innerText = newHero.pockets;
+  nodeTd[9].innerHTML = "<button>Удалить</button>";
 };
 
+// const createTr = () => {
+// };
+
+// Создаём исходный класс
 class Person {
   constructor(name, age, gender, character, history, pockets) {
     this.name = name;
@@ -92,13 +94,16 @@ class Person {
   }
 }
 
+// Расширяем исходный класс до фентезийного персонажа
 class FantasyHero extends Person {
   constructor(name, age, gender, character, history, pockets, skill, look) {
     super(name, age, gender, character, history, pockets);
     this.skill = skill;
     this.look = look;
+    this.race = "Человек";
     // Способность
     // Внешность
+    // Раса
   }
 
   // heroes.push({}); // это не сработает, но идея - пушить в массив методом этого класса
@@ -120,6 +125,8 @@ buttonCreate.addEventListener("click", start);
 // console.log(hero1);
 
 //---------------------------------------------------------
+
+// Это кусок кода, наглядно демонструрующий работу наследования классов, и он пока побудет здесь.
 
 // class First {
 //   hello() {
