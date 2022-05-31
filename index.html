@@ -16,7 +16,7 @@
     </header>
     <main class="main">
         <div class="container">
-            <div class="main-forms">
+            <form class="main-forms" action="#" method="#" id="form">
                 <div class="form-name">
                     <p>Имя</p>
                     <input tabindex="1" name="personName" type="text">
@@ -145,12 +145,13 @@
                 </div>
 <!-- Добавить сюда ещё возможность выбирать аватар персонажа и соотношение между характеристиками! 
 Для характеристик - конечное число очков, которое можно распределить между ними -->
-                <button class="button-create">Создать!</button>             
-            </div> <!-- /.main-forms -->
+                <button class="button-create">Создать!</button>
+
+            </form>
             <div class="main-table">
                 <h1>Ваши персонажи</h1>
-                <table class="saved-person" cellpadding="10" border="1px">
-                    <tr>
+                <table class="table-saved-person" cellpadding="10" border="1px">
+                    <tr class="table-title">
                         <td>Имя</td>
                         <td>Возраст</td>
                         <td>Пол</td>
@@ -191,6 +192,7 @@
                     </tr> 
                     <tr class="tr-delete">
                         <td></td>         -->
+                        
                     </tr> 
                 </table> 
             </div>
