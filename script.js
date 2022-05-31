@@ -22,34 +22,53 @@ const tableTr = document.querySelector("tr");
 
 // Получаем данные из форм
 
-const heroHameForm = document.getElementsByName("personName");
-const heroAgeForm = document.getElementsByName("personAge");
-const heroGenderForm = document.getElementsByClassName(".form-gender");
-const heroRaceForm = document.getElementsByName("race-select");
-const heroLookForm = document.getElementsByClassName(".form-look");
+const heroName = document.querySelector(".form-name");
+const heroAge = document.querySelector(".form-age");
+const heroGenders = document.querySelectorAll(".gender-checkbox");
 
-const heroCharacterForm = document.getElementsByClassName(".form-character");
-const heroHistoryForm = document.getElementsByClassName(".form-history");
-const heroSkillForm = document.getElementsByClassName(".form-skill");
-const heroPocketsForm = document.getElementsByClassName(".form-pockets");
+const heroRace = document.getElementsByName("race-select");
+const heroLook = document.getElementsByClassName(".form-look");
 
-console.log(heroHameForm);
-console.log(heroAgeForm);
-console.log(heroGenderForm);
-console.log(heroRaceForm);
-console.log(heroLookForm);
+const heroCharacter = document.getElementsByClassName(".form-character");
+const heroHistory = document.getElementsByClassName(".form-history");
+const heroSkill = document.getElementsByClassName(".form-skill");
+const heroPockets = document.getElementsByClassName(".form-pockets");
 
-console.log(heroCharacterForm);
-console.log(heroHistoryForm);
-console.log(heroSkillForm);
-console.log(heroPocketsForm);
+let heroGender;
+
+console.log(heroName.value);
+console.log(heroAge.value);
+console.log(heroGenders);
+
+for (const gender of heroGenders) {
+  if (gender.checked) {
+    heroGender = gender.value;
+  }
+}
+console.log(heroGender);
+
+// heroGender.forEach(function (item) {
+//   const check = item.querySelector("input[type=radio]");
+//   if (check.checked) {
+//     heroGenderCheck = check.value;
+//   }
+// });
+// console.log(heroGenderCheck);
+
+// for (let index = 0; index < heroGender.length; index++)
+// {
+//   if (heroGender[index].checked) {
+
+//   }
+// }
 
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
 
 // Пример создаваемого персонажа, используется только сначала.
-const a = "Терентий";
-const b = "90";
-const c = "Мужчина";
+
+// const a = "Терентий";
+// const b = "90";
+// const c = "Мужчина";
 const d = "Характер паскудный";
 const e =
   "Все думали, там умер дед, но дед не умирал! Ему 90, он не помнит стоп-слово :D";
@@ -73,7 +92,16 @@ const start = () => {
 
 const createHero = () => {
   // Создаём нового героя
-  const newHero = new FantasyHero(a, b, c, d, e, f, g, h);
+  const newHero = new FantasyHero(
+    heroName.value,
+    heroAge.value,
+    heroGender,
+    d,
+    e,
+    f,
+    g,
+    h
+  );
   // Отправляем нового героя в массив героев
   heroes.push(newHero);
   // Клонируем строку в таблице
@@ -90,7 +118,11 @@ const createHero = () => {
   nodeTd[6].innerText = newHero.history;
   nodeTd[7].innerText = newHero.skill;
   nodeTd[8].innerText = newHero.pockets;
-  nodeTd[9].innerHTML = "<button>Удалить</button>";
+  nodeTd[9].innerHTML = '<button class="button button-delete">Удалить</button>';
+
+  console.log(heroName.value);
+  console.log(heroAge.value);
+  console.log(heroGender.checked);
 };
 
 // const createTr = () => {
