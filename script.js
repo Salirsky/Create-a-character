@@ -17,15 +17,36 @@
 
 const buttonCreate = document.querySelector(".button-create");
 
-const raceSelect = document.getElementsByName("race-select");
-
 const table = document.querySelector(".table-saved-person");
 const tableTr = document.querySelector("tr");
 
-// const string = document.get
+// Получаем данные из форм
+
+const heroHameForm = document.getElementsByName("personName");
+const heroAgeForm = document.getElementsByName("personAge");
+const heroGenderForm = document.getElementsByClassName(".form-gender");
+const heroRaceForm = document.getElementsByName("race-select");
+const heroLookForm = document.getElementsByClassName(".form-look");
+
+const heroCharacterForm = document.getElementsByClassName(".form-character");
+const heroHistoryForm = document.getElementsByClassName(".form-history");
+const heroSkillForm = document.getElementsByClassName(".form-skill");
+const heroPocketsForm = document.getElementsByClassName(".form-pockets");
+
+console.log(heroHameForm);
+console.log(heroAgeForm);
+console.log(heroGenderForm);
+console.log(heroRaceForm);
+console.log(heroLookForm);
+
+console.log(heroCharacterForm);
+console.log(heroHistoryForm);
+console.log(heroSkillForm);
+console.log(heroPocketsForm);
 
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
 
+// Пример создаваемого персонажа, используется только сначала.
 const a = "Терентий";
 const b = "90";
 const c = "Мужчина";
@@ -60,7 +81,6 @@ const createHero = () => {
   // Добавляем клон строки в таблицу
   table.append(cloneTr);
   const nodeTd = cloneTr.querySelectorAll("td");
-  console.log(nodeTd);
   nodeTd[0].innerText = newHero.name;
   nodeTd[1].innerText = newHero.age;
   nodeTd[2].innerText = newHero.gender;
