@@ -26,7 +26,8 @@ const heroName = document.querySelector(".form-name");
 const heroAge = document.querySelector(".form-age");
 const heroGenders = document.querySelectorAll(".gender-checkbox");
 
-const heroRace = document.getElementsByName("race-select");
+// const heroRace = document.getElementsByName("race-select");
+const heroRace = document.querySelectorAll("race-select");
 const heroLook = document.getElementsByClassName(".form-look");
 
 const heroCharacter = document.getElementsByClassName(".form-character");
@@ -36,31 +37,32 @@ const heroPockets = document.getElementsByClassName(".form-pockets");
 
 let heroGender;
 
-console.log(heroName.value);
-console.log(heroAge.value);
-console.log(heroGenders);
+// console.log(heroName.value);
+// console.log(heroAge.value);
+// console.log(heroGenders);
+console.log(heroRace);
 
-for (const gender of heroGenders) {
-  if (gender.checked) {
-    heroGender = gender.value;
+//Метод для добавления информации про пол персонажа:
+const addGender = () => {
+  for (const gender of heroGenders) {
+    if (gender.checked) {
+      heroGender = gender.value;
+    }
   }
-}
-console.log(heroGender);
+};
 
-// heroGender.forEach(function (item) {
-//   const check = item.querySelector("input[type=radio]");
-//   if (check.checked) {
-//     heroGenderCheck = check.value;
-//   }
-// });
-// console.log(heroGenderCheck);
+//Метод для добавления информации про расу персонажа:
+const addRace = () => {
+  heroRace.forEach(function (race, index) {
+    const select = race.querySelector("select");
+    const input = race.querySelector("input");
+    const selectName = select.options[select.selectedIndex].textContent;
 
-// for (let index = 0; index < heroGender.length; index++)
-// {
-//   if (heroGender[index].checked) {
-
-//   }
-// }
+    console.log(select);
+    console.log(input);
+    console.log(selectName);
+  });
+};
 
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
 
