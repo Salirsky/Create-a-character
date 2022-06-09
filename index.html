@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a character</title>
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 
 </head>
@@ -39,161 +40,33 @@
                 </div>
                 <div class="form-race">
                     <p>Раса</p>
-                    <select tabindex="4" name="race-select">
+                    <select tabindex="4" name="race-select" class="race-select">
                         <option value="" selected>Человек</option>
                         <option value="">Эльф</option>
                         <option value="">Оборотень</option>
                         <option value="">Гном</option>
                         <option value="">Вампир</option>
-                        <option value="">Призрак</option>
+                        <option value="">Эльфампир</option>
+                        <option value="">Гномоборотень</option>
+                        <option value="">Гномэльф</option>
+                        <option value="">Вампироборотень</option>
+                        <option value="">Живой гриб</option>
                     </select>
                 </div>
-                <div class="form-look">
-                    <p>Особенности внешнего вида</p>
-                    <div class="main-look__checkbox">
-                        <input tabindex="5" class="look-checkbox" type="checkbox" name="" id="checkbox-1">
-                        <label for="checkbox-1">Огромный шрам на лице</label>                         
-                    </div>
-                    <div class="main-look__checkbox">
-                         <input tabindex="6" class="look-checkbox" type="checkbox" name="" id="checkbox-2">
-                        <label for="checkbox-2">Пушистый хвост</label>                         
-                    </div>
-                    <div class="main-look__checkbox">
-                        <input tabindex="7" class="look-checkbox" type="checkbox" name="" id="checkbox-3">
-                        <label for="checkbox-3">Ободранное ухо</label>                         
-                    </div>
-                    <div class="main-look__checkbox">
-                        <input tabindex="8" class="look-checkbox" type="checkbox" name="" id="checkbox-4">
-                        <label for="checkbox-4">Чешуйчатые крылья</label>                         
-                     </div>
-                     <div class="main-look__checkbox">
-                          <input tabindex="9" class="look-checkbox" type="checkbox" name="" id="checkbox-5">
-                          <label for="checkbox-5">Деревянная нога</label>                         
-                      </div>
-                      <div class="main-look__checkbox">
-                          <input tabindex="10" class="look-checkbox" type="checkbox" name="" id="checkbox-6">
-                           <label for="checkbox-6">Перепонки между пальцами</label>                         
-                       </div>
-                       <div class="main-look__checkbox">
-                           <input tabindex="11" class="look-checkbox" type="checkbox" name="" id="checkbox-7">
-                           <label for="checkbox-7">Без особых примет</label>                         
-                      </div>
-                </div>
-
-                <div class="form-character">
-                    <p>Харакер</p>
-                    <textarea tabindex="12" name="text"></textarea>
-                </div>
-                <div class="form-history">
-                    <p>История</p>
-                    <textarea tabindex="13" name="text"></textarea>
-                </div>
-                <div class="form-skill">
-                    <p>Способность</p>
-                    <div>
-                        <input tabindex="14" checked type="radio" name="skill" value="regeneration
-                        "> Регенерация
-                    </div>
-                    <div>
-                        <input tabindex="14" type="radio" name="skill" value="levitation
-                        "> Левитация
-                    </div>    
-                    <div>
-                        <input tabindex="14" type="radio" name="skill" value="healing"> Исцеление
-                    </div>
-                    <div>
-                        <input tabindex="14" type="radio" name="skill" value="hypnosis"> Гипноз
-                    </div>
-                    <div>
-                        <input tabindex="14" type="radio" name="skill" value="illusions"> Создание иллюзий
-                    </div>
-                    <div>
-                        <input tabindex="14" type="radio" name="skill" value="telekinesis
-                        "> Телекинез
-                    </div>                            
-                </div>
-                <div class="form-pockets">
-                    <p>Что в карманцах</p>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="15" class="pockets-checkbox" type="checkbox" name="" id="checkbox-8">
-                        <label for="checkbox-8">Засохший цветок ромашки</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="16" class="pockets-checkbox" type="checkbox" name="" id="checkbox-9">
-                        <label for="checkbox-9">Расчёска без трети зубьев</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="17" class="pockets-checkbox" type="checkbox" name="" id="checkbox-10">
-                        <label for="checkbox-10">Пара медяков</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="18" class="pockets-checkbox" type="checkbox" name="" id="checkbox-11">
-                        <label for="checkbox-11">Чёрствый сухарь</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="19" class="pockets-checkbox" type="checkbox" name="" id="checkbox-12">
-                        <label for="checkbox-12">Рецепт самогона</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="20" class="pockets-checkbox" type="checkbox" name="" id="checkbox-13">
-                        <label for="checkbox-13">Уголёк (весь карман перепачкал!)</label>                         
-                    </div>
-                    <div class="main-pockets__checkbox">
-                        <input tabindex="21" class="pockets-checkbox" type="checkbox" name="" id="checkbox-14">
-                        <label for="checkbox-14">Скромное ничего</label>                         
-                    </div>
-                </div>
-<!-- Добавить сюда ещё возможность выбирать аватар персонажа и соотношение между характеристиками! 
-Для характеристик - конечное число очков, которое можно распределить между ними -->
-                <button class="button-create">Создать!</button>
+                
+                <button class="button-create button-dark">Создать!</button>
 
             </form>
             <div class="main-table">
                 <h1>Ваши персонажи</h1>
-                <table class="table-saved-person" cellpadding="10" border="1px">
+                <table class="table-saved-person" cellpadding="15" >
                     <tr class="table-title">
                         <td>Имя</td>
                         <td>Возраст</td>
                         <td>Пол</td>
                         <td>Раса</td>
-                        <td>Внешние особенности</td>
-                        <td>Характер</td>
-                        <td>История</td>
-                        <td>Способность</td>
-                        <td>Содержимое карманов</td>
                         <td>...</td>                   
                     </tr>
-                    <!-- <tr class="tr-name">
-                        <td>Имя</td>
-                    </tr>
-                    <tr class="tr-age">
-                        <td>Возраст</td>
-                    </tr>
-                    <tr class="tr-gender">
-                        <td>Пол</td>
-                    </tr>
-                    <tr class="tr-race">
-                        <td>Раса</td>
-                    </tr>
-                    <tr class="tr-look">
-                        <td>Внешние особенности</td>
-                    </tr>
-                    <tr class="tr-character">
-                        <td>Характер</td>
-                    </tr>
-                    <tr class="tr-history">
-                        <td>История</td>
-                    </tr>
-                    <tr class="tr-skill">
-                        <td>Способность</td>
-                    </tr>
-                    <tr class="tr-pockets">
-                        <td>Содержимое карманов</td>
-                    </tr> 
-                    <tr class="tr-delete">
-                        <td></td>         -->
-                        
-                    </tr> 
                 </table> 
             </div>
         </div> <!-- /.container -->
