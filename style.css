@@ -1,0 +1,42 @@
+/* .container {    
+    max-width: 1130px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+} */
+p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #01271a;
+}
+.button-create {
+    display: block;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: center;
+    border: 0;
+    margin: 20px 0 20px 0;
+    padding: 10px 50px;
+}
+.button-dark {
+    color: #fff;
+    background-color: #002b15;
+    transition: .3s ease all;
+}
+.button-dark:hover {
+    color: #fff;
+    background-color: #004430;
+    transition: .3s ease all;
+}
+.table-saved-person {
+    border-collapse: collapse;
+    border: 2px solid rgb(55, 102, 82);
+}
+th,  td {
+    border: 1px solid rgb(55, 102, 82);
+}
