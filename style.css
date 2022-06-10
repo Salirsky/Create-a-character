@@ -17,7 +17,7 @@ p {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    line-height: 16px;
+    line-height: 15px;
     text-align: center;
     border: 0;
     margin: 20px 0 20px 0;
@@ -28,6 +28,18 @@ p {
     background-color: #002b15;
     transition: .3s ease all;
 }
+.button-delete {
+    padding: 10px 30px;
+    border: 0;
+    background-color: #940025;
+    color: #fff;
+    transition: .3s ease all;
+    border-radius: 50px;
+}
+.button-delete:hover {
+    background-color: #38000e;
+    transition: .3s ease all;
+}
 .button-dark:hover {
     color: #fff;
     background-color: #004430;
@@ -35,7 +47,7 @@ p {
 }
 .table-saved-person {
     border-collapse: collapse;
-    border: 2px solid rgb(55, 102, 82);
+    border: 1px solid rgb(55, 102, 82);
 }
 th,  td {
     border: 1px solid rgb(55, 102, 82);
