@@ -12,24 +12,40 @@ const heroGenders = document.querySelectorAll(".gender-checkbox");
 const heroRaces = document.querySelectorAll(".race-select");
 
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
+let newHero;
 
-let heroGender; // Выбранный пол
-let heroRace; // Выбранная раса
+let nameHero; // Имя героя
+let ageHero; // Возраст героя
+let genderHero; // Выбранный пол
+let raceHero; // Выбранная раса
 
 const start = () => {
+  dataProcessing();
   createHero();
+};
+
+// Обрабатываем данные для передачи их в конструктор при создании нового героя
+const dataProcessing = () => {
+  nameHero = heroName.value;
+  ageHero = heroAge.value;
+  for (const gender of heroGenders) {
+    if (gender.checked) {
+      genderHero = gender.value;
+    }
+  }
+  heroRaces.forEach(function (race) {
+    raceHero = race.options[race.selectedIndex].text;
+  });
 };
 
 const createHero = () => {
   // Создаём нового героя
-  const newHero = new FantasyHero(
-    // Передаём даннные, полученные из DOM, дальнейшее преобразование - в методах классов
-    heroName,
-    heroAge,
-    heroGenders,
-    heroRaces
+  newHero = new FantasyHero(
+    nameHero, // Имя героя
+    ageHero, // Возраст героя
+    genderHero, // Выбранный пол
+    raceHero // Выбранная раса
   );
-
   // Отправляем нового героя в массив героев
   heroes.push(newHero);
   // Клонируем строку в таблице
@@ -42,30 +58,14 @@ const createHero = () => {
   nodeTd[2].innerText = newHero.gender;
   nodeTd[3].innerText = newHero.race;
   nodeTd[4].innerHTML = '<button class="button button-delete">Удалить</button>';
-
-  console.log(heroes);
 };
 
 // Создаём исходный класс
 class Person {
-  // Обращение в конструкторе к полям через this фактически будет аналогично их определению, и в данном случае мы можем убрать определение полей:
-  // name;
-  // age;
-  // gender;
-
-  constructor(heroName, heroAge, heroGenders) {
-    this.name = heroName.value;
-    this.age = heroAge.value;
-    // this.gender = heroGenders;
-  }
-  //Метод для добавления информации про пол персонажа:
-  addGender(heroGenders) {
-    for (const gender of heroGenders) {
-      if (gender.checked) {
-        this.heroGender = gender.value;
-      }
-    }
-    console.log(`Привет! я ${this.heroGender}!`);
+  constructor(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
   }
 }
 
@@ -73,14 +73,7 @@ class Person {
 class FantasyHero extends Person {
   constructor(name, age, gender, race) {
     super(name, age, gender);
-    // this.race = race;
-  }
-  //Метод для добавления информации про расу персонажа:
-  addRace(heroRaces) {
-    heroRaces.forEach(function (race) {
-      heroRace = race.options[race.selectedIndex].text;
-      this.race = heroRace;
-    });
+    this.race = race;
   }
 }
 
