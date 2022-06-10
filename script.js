@@ -1,7 +1,6 @@
-"use strict";
+"Use strict";
 
 const buttonCreate = document.querySelector(".button-create");
-
 const table = document.querySelector(".table-saved-person");
 const tableTr = document.querySelector("tr");
 
@@ -26,16 +25,21 @@ const start = () => {
 
 // Обрабатываем данные для передачи их в конструктор при создании нового героя
 const dataProcessing = () => {
+  // Получаем имя персонажа
   nameHero = heroName.value;
+  // Получаем возраст персонажа
   ageHero = heroAge.value;
+  // Получаем пол персонажа
   for (const gender of heroGenders) {
     if (gender.checked) {
       genderHero = gender.value;
     }
   }
+  // Получаем расу персонажа
   heroRaces.forEach(function (race) {
     raceHero = race.options[race.selectedIndex].text;
   });
+  console.log(nameHero, ageHero, genderHero, raceHero);
 };
 
 const createHero = () => {
