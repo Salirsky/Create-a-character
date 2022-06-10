@@ -4,6 +4,9 @@
     position: relative;
     padding: 0 15px;
 } */
+h1 {
+    color: #353535;
+}
 p {
     font-style: normal;
     font-weight: 600;
@@ -47,8 +50,9 @@ p {
 }
 .table-saved-person {
     border-collapse: collapse;
-    border: 1px solid rgb(55, 102, 82);
+    border: 1px solid rgb(150, 150, 150);
 }
 th,  td {
-    border: 1px solid rgb(55, 102, 82);
+    border: 1px solid rgb(150, 150, 150);
 }
+
