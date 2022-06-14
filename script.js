@@ -1,6 +1,9 @@
 "Use strict";
 
+const raceSelect = document.getElementById("race-select");
+
 const buttonCreate = document.querySelector(".button-create");
+
 const table = document.querySelector(".table-saved-person");
 const tableTr = document.querySelector("tr");
 
@@ -17,6 +20,24 @@ let nameHero; // Имя героя
 let ageHero; // Возраст героя
 let genderHero; // Выбранный пол
 let raceHero; // Выбранная раса
+
+const init = () => {
+  // Выбираем расу, и запускаем функцию changeSkills
+  raceSelect.addEventListener("change", changeSkills);
+  // Нажимаем кнопку "Создать", и запускаем Старт
+  buttonCreate.addEventListener("click", start);
+};
+
+const changeSkills = () => {
+  console.log(1);
+
+  // Добавить/поменять скиллы в зависимости от расы
+
+  //   // Клонируем строку в таблице
+  // const cloneTr = tableTr.cloneNode(true);
+  // // Добавляем клон строки в таблицу
+  // table.append(cloneTr);
+};
 
 const start = () => {
   dataProcessing();
@@ -39,7 +60,7 @@ const dataProcessing = () => {
   heroRaces.forEach(function (race) {
     raceHero = race.options[race.selectedIndex].text;
   });
-  console.log(nameHero, ageHero, genderHero, raceHero);
+  // console.log(nameHero, ageHero, genderHero, raceHero);
 };
 
 const createHero = () => {
@@ -62,6 +83,10 @@ const createHero = () => {
   nodeTd[2].innerText = newHero.gender;
   nodeTd[3].innerText = newHero.race;
   nodeTd[4].innerHTML = '<button class="button button-delete">Удалить</button>';
+
+  // console.log(newHero);
+  newHero.logger();
+  newHero.addLog();
 };
 
 // Создаём исходный класс
@@ -79,6 +104,33 @@ class FantasyHero extends Person {
     super(name, age, gender);
     this.race = race;
   }
+  logger() {
+    console.log(this.race);
+  }
+  addLog() {
+    switch (this.race) {
+      case "Человек":
+        console.log("и кошка");
+        break;
+      case "Гном":
+        console.log("Король под горой");
+        break;
+      case "Оборотень":
+        console.log("Среди тёмных подворотен");
+        break;
+      case "Вампир":
+        console.log("устроил пир");
+        break;
+      case "Эльф":
+        console.log("из Лориэна");
+        break;
+      case "Живой гриб":
+        console.log("Ленин?");
+        break;
+      default:
+        console.log("чё?");
+    }
+  }
 }
 
-buttonCreate.addEventListener("click", start);
+init();
