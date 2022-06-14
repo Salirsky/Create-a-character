@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-race">
                     <p>Раса</p>
-                    <select tabindex="4" name="race-select" class="race-select">
+                    <select tabindex="4" name="race-select" class="race-select" id="race-select">
                         <option value="" selected>Человек</option>
                         <option value="">Гном</option>
                         <option value="">Оборотень</option>
@@ -49,9 +49,22 @@
                         <option value="">Живой гриб</option>
                     </select>
                 </div>
+                <div class="form-skill">
+                    <p>Способность</p>
+                    <div>
+                        <input tabindex="14" checked type="radio" name="skill" value="regeneration
+                        "> Регенерация
+                    </div>
+                    <div>
+                        <input tabindex="14" type="radio" name="skill" value="levitation
+                        "> Левитация
+                    </div>    
+                    <div>
+                        <input tabindex="14" type="radio" name="skill" value="healing"> Исцеление
+                    </div>                         
+                </div>
                 
                 <button class="button-create button-dark">Создать!</button>
-
             </div>
             <div class="main-table">
                 <h1>Ваши персонажи</h1>
