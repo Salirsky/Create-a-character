@@ -1,6 +1,7 @@
 "Use strict";
 
 const raceSelect = document.getElementById("race-select");
+const formSkill = document.querySelector(".form-skill");
 
 const buttonCreate = document.querySelector(".button-create");
 
@@ -29,14 +30,41 @@ const init = () => {
 };
 
 const changeSkills = () => {
-  console.log(1);
+  findRace();
 
-  // Добавить/поменять скиллы в зависимости от расы
-
-  //   // Клонируем строку в таблице
-  // const cloneTr = tableTr.cloneNode(true);
-  // // Добавляем клон строки в таблицу
-  // table.append(cloneTr);
+  switch (raceHero) {
+    case "Человек":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Некромантия </div><div><input tabindex="5" type="radio" name="skill" value=""> Магия снов </div><div><input tabindex="5" type="radio" name="skill" value=""> Владение тенями </div>';
+      break;
+    case "Гном":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Управление металлами </div><div><input tabindex="5" type="radio" name="skill" value=""> Хождение по стенам и потолку </div><div><input tabindex="5" type="radio" name="skill" value=""> Сопротивляемость магии </div>';
+      break;
+    case "Оборотень":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Регенерация</div><div><input tabindex="5" type="radio" name="skill" value=""> Управление животными </div><div><input tabindex="5" type="radio" name="skill" value=""> Анимагия </div>';
+      break;
+    case "Вампир":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Управление огнём</div><div><input tabindex="5" type="radio" name="skill" value=""> Чтение мыслей </div><div><input tabindex="5" type="radio" name="skill" value=""> Прохождение сквозь стены и предметы </div>';
+      break;
+    case "Эльф":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Управление растениями</div><div><input tabindex="5" type="radio" name="skill" value=""> Управление животными </div><div><input tabindex="5" type="radio" name="skill" value=""> Целительство </div>';
+      break;
+    case "Живой гриб":
+      formSkill.innerHTML =
+        '<p>Способность</p><div><input tabindex="5" checked type="radio" name="skill" value=""> Создание иллюзий</div><div><input tabindex="5" type="radio" name="skill" value=""> Невидимость </div><div><input tabindex="5" type="radio" name="skill" value=""> Гипноз </div>';
+      break;
+    default:
+      console.log("чё?");
+  }
+};
+const findRace = () => {
+  heroRaces.forEach(function (race) {
+    raceHero = race.options[race.selectedIndex].text;
+  });
 };
 
 const start = () => {
@@ -57,10 +85,8 @@ const dataProcessing = () => {
     }
   }
   // Получаем расу персонажа
-  heroRaces.forEach(function (race) {
-    raceHero = race.options[race.selectedIndex].text;
-  });
-  // console.log(nameHero, ageHero, genderHero, raceHero);
+  findRace();
+  //
 };
 
 const createHero = () => {
