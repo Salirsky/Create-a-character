@@ -55,4 +55,7 @@ p {
 th,  td {
     border: 1px solid rgb(150, 150, 150);
 }
+.hidden {
+    display: none;
+}
 
