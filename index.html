@@ -52,15 +52,58 @@
                 <div class="form-skill">
                     <p>Способность</p>
                     <!-- Вставить сюда все-привсе способности и в зависимости от выбранной расы добавлять класс .hidden соответствующим. Тогда можно добавить гораздо больше способностей, использовать имеющиеся, и получить в финальной таблице не только некромантию x)  -->
-                    <div>
-                        <input tabindex="5" checked type="radio"  class="skill-checkbox" name="skill" value="Некромантия"> Некромантия
+                    <div class="skill-for-humans skill-for-vampires">
+                        <input tabindex="5" type="radio"  class="skill-checkbox" name="skill" value="Некромантия"> Некромантия
                     </div>
-                    <div>
+                    <div class="skill-for-humans skill-for-elfs">
                         <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value=" Магия снов"> Магия снов
                     </div>    
-                    <div>
+                    <div class="skill-for-humans skill-for-vampires">
                         <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value="Владение тенями"> Владение тенями
-                    </div>                         
+                    </div>
+                    <div class="hidden skill-for-dwarfs">
+                        <input tabindex="5" type="radio" name="skill" value="Управление металлами" class="skill-checkbox"> Управление металлами 
+                    </div>
+                    <div class="hidden skill-for-dwarfs">
+                        <input tabindex="5" type="radio" name="skill" value="Хождение по стенам и потолку" class="skill-checkbox"> Хождение по стенам и потолку 
+                    </div>
+                    <div class="hidden skill-for-dwarfs">
+                        <input tabindex="5" type="radio" name="skill" value="Сопротивляемость магии" class="skill-checkbox"> Сопротивляемость магии 
+                    </div>
+                    <div class="hidden skill-for-werewolfs skill-for-vampires">
+                        <input tabindex="5" type="radio" name="skill" value="Регенерация" class="skill-checkbox"> Регенерация
+                    </div>
+                    <div class="hidden skill-for-werewolfs skill-for-elfs">
+                        <input tabindex="5" type="radio" name="skill" value="Управление животными" class="skill-checkbox"> Управление животными 
+                    </div>
+                    <div class="hidden skill-for-werewolfs">
+                        <input tabindex="5" type="radio" name="skill" value="Анимагия" class="skill-checkbox"> Анимагия 
+                    </div>
+                    <div class="hidden skill-for-vampires">
+                        <input tabindex="5" type="radio" name="skill" value="Управление огнём" class="skill-checkbox"> Управление огнём
+                    </div>
+                    <div class="hidden skill-for-vampires">
+                        <input tabindex="5" type="radio" name="skill" value="Чтение мыслей" class="skill-checkbox"> Чтение мыслей 
+                    </div>
+                    <div class="hidden skill-for-vampires">
+                        <input tabindex="5" type="radio" name="skill" value="Прохождение сквозь стены и предметы" class="skill-checkbox"> Прохождение сквозь стены и предметы 
+                    </div>
+                    <div class="hidden skill-for-elfs">
+                        <input tabindex="5" type="radio" name="skill" value="Управление растениями" class="skill-checkbox"> Управление растениями
+                    </div>
+                    <div class="hidden skill-for-elfs">
+                        <input tabindex="5" type="radio" name="skill" value="Целительство" class="skill-checkbox"> Целительство 
+                    </div>
+                    <div class="hidden skill-for-mushrooms skill-for-vampires">
+                        <input tabindex="5" type="radio" name="skill" value="Создание иллюзий" class="skill-checkbox"> Создание иллюзий
+                    </div>
+                    <div class="hidden skill-for-mushrooms">
+                        <input tabindex="5" type="radio" name="skill" value="Невидимость" class="skill-checkbox"> Невидимость 
+                    </div>
+                    <div class="hidden skill-for-mushrooms">
+                        <input tabindex="5" type="radio" name="skill" value="Гипноз" class="skill-checkbox"> Гипноз 
+                    </div>
+                                             
                 </div>
                 
                 <button class="button-create button-dark">Создать!</button>
