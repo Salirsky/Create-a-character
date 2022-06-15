@@ -15,7 +15,6 @@ const heroGenders = document.querySelectorAll(".gender-checkbox");
 const heroRaces = document.querySelectorAll(".race-select");
 const heroSkills = document.querySelectorAll(".skill-checkbox");
 const heroSkillsBlocks = document.querySelectorAll(".form-skill div");
-// const heroSkills = document.querySelectorAll(".form-skill input");
 
 let heroes = []; // массив объектов, где каждый объект - отдельный персонаж
 let newHero;
@@ -25,8 +24,6 @@ let ageHero; // Возраст героя
 let genderHero; // Выбранный пол
 let raceHero; // Выбранная раса
 let skillHero; // Выбранная способность
-
-// let years; // лет, года
 
 const init = () => {
   // Выбираем расу, и запускаем функцию changeSkills
@@ -139,19 +136,6 @@ const dataProcessing = () => {
       skillHero = skill.value;
     }
   }
-  // Ставим правильное слово после возраста:
-  // let lastNumAge = ageHero.toString().split("").pop();
-  // switch (lastNumAge) {
-  //   case 0 || 5 || 6 || 7 || 8 || 9:
-  //     years = " лет";
-  //     break;
-  //   case 1:
-  //     years = " год";
-  //     break;
-  //   case 2 || 3 || 4:
-  //     years = " года";
-  //     break;
-  // }
 };
 
 const createHero = () => {
@@ -176,10 +160,6 @@ const createHero = () => {
   nodeTd[3].innerText = newHero.race;
   nodeTd[4].innerText = newHero.skill;
   nodeTd[5].innerHTML = '<button class="button button-delete">Удалить</button>';
-
-  // console.log(newHero);
-  // newHero.logger();
-  // newHero.addLog();
 };
 
 // Создаём исходный класс
@@ -190,7 +170,6 @@ class Person {
     this.gender = gender;
   }
 }
-
 // Расширяем исходный класс до фентезийного персонажа
 class FantasyHero extends Person {
   constructor(name, age, gender, race, skill) {
@@ -198,33 +177,6 @@ class FantasyHero extends Person {
     this.race = race;
     this.skill = skill;
   }
-  // logger() {
-  //   console.log(this.race);
-  // }
-  // addLog() {
-  //   switch (this.race) {
-  //     case "Человек":
-  //       console.log("и кошка");
-  //       break;
-  //     case "Гном":
-  //       console.log("Король под горой");
-  //       break;
-  //     case "Оборотень":
-  //       console.log("Среди тёмных подворотен");
-  //       break;
-  //     case "Вампир":
-  //       console.log("устроил пир");
-  //       break;
-  //     case "Эльф":
-  //       console.log("из Лориэна");
-  //       break;
-  //     case "Живой гриб":
-  //       console.log("Ленин?");
-  //       break;
-  //     default:
-  //       console.log("чё?");
-  //   }
-  // }
 }
 
 init();
