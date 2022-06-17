@@ -7,116 +7,127 @@
     <title>Create a character</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="container">
-            <h1 class="title" id="title">Создай персонажа</h1>
+            
         </div>
-    </header>
+    </header> -->
     <main class="main">
         <div class="container">
-            <div class="main-forms" action="#" method="#" id="form">
-                <div class="div_form-name">
-                    <p>Имя</p>
-                    <input tabindex="1" class="form-name" name="personName" type="text">
+            <div class="flex">                         
+                <div class="main-forms" action="#" method="#" id="form">
+                    <h1>Создай персонажа!</h1>
+                    <div class="div_form-name">
+                        <p>Имя</p>
+                        <input tabindex="1" class="form-name" name="personName" type="text">
+                    </div>
+                    <div class="div_form-age">
+                        <p>Возраст</p>
+                        <input tabindex="2" class="form-age" name="personAge" type="number" min="0">
+                    </div>
+                    <div class="div_form-gender">
+                        <p>Пол</p>
+                        <div>
+                            <input tabindex="3" class="gender-checkbox" checked type="radio" name="gender" value="Мужчина"> Мужчина
+                        </div>
+                        <div>
+                            <input tabindex="3" class="gender-checkbox" type="radio" name="gender" value="Женщина"> Женщина
+                        </div>    
+                        <div>
+                            <input tabindex="3" class="gender-checkbox" type="radio" name="gender" value="Иное"> Иное
+                        </div>
+                    </div>
+                    <div class="form-race">
+                        <p>Раса</p>
+                        <select tabindex="4" name="race-select" class="race-select" id="race-select">
+                            <option value="" selected>Человек</option>
+                            <option value="">Гном</option>
+                            <option value="">Оборотень</option>
+                            <option value="">Вампир</option>
+                            <option value="">Эльф</option>
+                            <option value="">Живой гриб</option>
+                        </select>
+                    </div>
+                    <div class="form-skill">
+                        <p>Способность</p>
+                        <!-- Вставить сюда все-привсе способности и в зависимости от выбранной расы добавлять класс .hidden соответствующим. Тогда можно добавить гораздо больше способностей, использовать имеющиеся, и получить в финальной таблице не только некромантию x)  -->
+                        <div class="skill-for-humans skill-for-vampires">
+                            <input tabindex="5" type="radio"  class="skill-checkbox" name="skill" value="Некромантия"> Некромантия
+                        </div>
+                        <div class="skill-for-humans skill-for-elfs">
+                            <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value=" Магия снов"> Магия снов
+                        </div>    
+                        <div class="skill-for-humans skill-for-vampires">
+                            <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value="Владение тенями"> Владение тенями
+                        </div>
+                        <div class="hidden skill-for-dwarfs">
+                            <input tabindex="5" type="radio" name="skill" value="Управление металлами" class="skill-checkbox"> Управление металлами 
+                        </div>
+                        <div class="hidden skill-for-dwarfs">
+                            <input tabindex="5" type="radio" name="skill" value="Хождение по стенам и потолку" class="skill-checkbox"> Хождение по стенам и потолку 
+                        </div>
+                        <div class="hidden skill-for-dwarfs">
+                            <input tabindex="5" type="radio" name="skill" value="Сопротивляемость магии" class="skill-checkbox"> Сопротивляемость магии 
+                        </div>
+                        <div class="hidden skill-for-werewolfs skill-for-vampires">
+                            <input tabindex="5" type="radio" name="skill" value="Регенерация" class="skill-checkbox"> Регенерация
+                        </div>
+                        <div class="hidden skill-for-werewolfs skill-for-elfs">
+                            <input tabindex="5" type="radio" name="skill" value="Управление животными" class="skill-checkbox"> Управление животными 
+                        </div>
+                        <div class="hidden skill-for-werewolfs">
+                            <input tabindex="5" type="radio" name="skill" value="Анимагия" class="skill-checkbox"> Анимагия 
+                        </div>
+                        <div class="hidden skill-for-vampires">
+                            <input tabindex="5" type="radio" name="skill" value="Управление огнём" class="skill-checkbox"> Управление огнём
+                        </div>
+                        <div class="hidden skill-for-vampires">
+                            <input tabindex="5" type="radio" name="skill" value="Чтение мыслей" class="skill-checkbox"> Чтение мыслей 
+                        </div>
+                        <div class="hidden skill-for-vampires">
+                            <input tabindex="5" type="radio" name="skill" value="Прохождение сквозь стены и предметы" class="skill-checkbox"> Прохождение сквозь стены и предметы 
+                        </div>
+                        <div class="hidden skill-for-elfs">
+                            <input tabindex="5" type="radio" name="skill" value="Управление растениями" class="skill-checkbox"> Управление растениями
+                        </div>
+                        <div class="hidden skill-for-elfs">
+                            <input tabindex="5" type="radio" name="skill" value="Целительство" class="skill-checkbox"> Целительство 
+                        </div>
+                        <div class="hidden skill-for-mushrooms skill-for-vampires">
+                            <input tabindex="5" type="radio" name="skill" value="Создание иллюзий" class="skill-checkbox"> Создание иллюзий
+                        </div>
+                        <div class="hidden skill-for-mushrooms">
+                            <input tabindex="5" type="radio" name="skill" value="Невидимость" class="skill-checkbox"> Невидимость 
+                        </div>
+                        <div class="hidden skill-for-mushrooms">
+                            <input tabindex="5" type="radio" name="skill" value="Гипноз" class="skill-checkbox"> Гипноз 
+                        </div>
+                                                 
+                    </div>
+                    
+                    <button class="button-create button-dark">Создать!</button>
+                </div>            
+                <div class="main-table">
+                    <h1>Ваши персонажи</h1>
+                    <table class="table-saved-person" cellpadding="15" >
+                        <tr class="table-title">
+                            <td>Имя</td>
+                            <td>Возраст</td>
+                            <td>Пол</td>
+                            <td>Раса</td>
+                            <td>Способность</td>
+                            <td><button class="button button-delete-all">Очистить</button></td>                   
+                        </tr>
+                    </table> 
                 </div>
-                <div class="div_form-age">
-                    <p>Возраст</p>
-                    <input tabindex="2" class="form-age" name="personAge" type="number" min="0">
-                </div>
-                <div class="div_form-gender">
-                    <p>Пол</p>
-                    <div>
-                        <input tabindex="3" class="gender-checkbox" checked type="radio" name="gender" value="Мужчина"> Мужчина
-                    </div>
-                    <div>
-                        <input tabindex="3" class="gender-checkbox" type="radio" name="gender" value="Женщина"> Женщина
-                    </div>    
-                    <div>
-                        <input tabindex="3" class="gender-checkbox" type="radio" name="gender" value="Иное"> Иное
-                    </div>
-                </div>
-                <div class="form-race">
-                    <p>Раса</p>
-                    <select tabindex="4" name="race-select" class="race-select" id="race-select">
-                        <option value="" selected>Человек</option>
-                        <option value="">Гном</option>
-                        <option value="">Оборотень</option>
-                        <option value="">Вампир</option>
-                        <option value="">Эльф</option>
-                        <option value="">Живой гриб</option>
-                    </select>
-                </div>
-                <div class="form-skill">
-                    <p>Способность</p>
-                    <!-- Вставить сюда все-привсе способности и в зависимости от выбранной расы добавлять класс .hidden соответствующим. Тогда можно добавить гораздо больше способностей, использовать имеющиеся, и получить в финальной таблице не только некромантию x)  -->
-                    <div class="skill-for-humans skill-for-vampires">
-                        <input tabindex="5" type="radio"  class="skill-checkbox" name="skill" value="Некромантия"> Некромантия
-                    </div>
-                    <div class="skill-for-humans skill-for-elfs">
-                        <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value=" Магия снов"> Магия снов
-                    </div>    
-                    <div class="skill-for-humans skill-for-vampires">
-                        <input tabindex="5" type="radio" class="skill-checkbox" name="skill" value="Владение тенями"> Владение тенями
-                    </div>
-                    <div class="hidden skill-for-dwarfs">
-                        <input tabindex="5" type="radio" name="skill" value="Управление металлами" class="skill-checkbox"> Управление металлами 
-                    </div>
-                    <div class="hidden skill-for-dwarfs">
-                        <input tabindex="5" type="radio" name="skill" value="Хождение по стенам и потолку" class="skill-checkbox"> Хождение по стенам и потолку 
-                    </div>
-                    <div class="hidden skill-for-dwarfs">
-                        <input tabindex="5" type="radio" name="skill" value="Сопротивляемость магии" class="skill-checkbox"> Сопротивляемость магии 
-                    </div>
-                    <div class="hidden skill-for-werewolfs skill-for-vampires">
-                        <input tabindex="5" type="radio" name="skill" value="Регенерация" class="skill-checkbox"> Регенерация
-                    </div>
-                    <div class="hidden skill-for-werewolfs skill-for-elfs">
-                        <input tabindex="5" type="radio" name="skill" value="Управление животными" class="skill-checkbox"> Управление животными 
-                    </div>
-                    <div class="hidden skill-for-werewolfs">
-                        <input tabindex="5" type="radio" name="skill" value="Анимагия" class="skill-checkbox"> Анимагия 
-                    </div>
-                    <div class="hidden skill-for-vampires">
-                        <input tabindex="5" type="radio" name="skill" value="Управление огнём" class="skill-checkbox"> Управление огнём
-                    </div>
-                    <div class="hidden skill-for-vampires">
-                        <input tabindex="5" type="radio" name="skill" value="Чтение мыслей" class="skill-checkbox"> Чтение мыслей 
-                    </div>
-                    <div class="hidden skill-for-vampires">
-                        <input tabindex="5" type="radio" name="skill" value="Прохождение сквозь стены и предметы" class="skill-checkbox"> Прохождение сквозь стены и предметы 
-                    </div>
-                    <div class="hidden skill-for-elfs">
-                        <input tabindex="5" type="radio" name="skill" value="Управление растениями" class="skill-checkbox"> Управление растениями
-                    </div>
-                    <div class="hidden skill-for-elfs">
-                        <input tabindex="5" type="radio" name="skill" value="Целительство" class="skill-checkbox"> Целительство 
-                    </div>
-                    <div class="hidden skill-for-mushrooms skill-for-vampires">
-                        <input tabindex="5" type="radio" name="skill" value="Создание иллюзий" class="skill-checkbox"> Создание иллюзий
-                    </div>
-                    <div class="hidden skill-for-mushrooms">
-                        <input tabindex="5" type="radio" name="skill" value="Невидимость" class="skill-checkbox"> Невидимость 
-                    </div>
-                    <div class="hidden skill-for-mushrooms">
-                        <input tabindex="5" type="radio" name="skill" value="Гипноз" class="skill-checkbox"> Гипноз 
-                    </div>                                             
-                </div>             
-                <button class="button-create button-dark">Создать!</button>
-            </div>
-            <div class="main-table">
-                <h1>Ваши персонажи</h1>
-                <table class="table-saved-person" cellpadding="15" >
-                    <tr class="table-title">
-                        <td>Имя</td>
-                        <td>Возраст</td>
-                        <td>Пол</td>
-                        <td>Раса</td>
-                        <td>Способность</td>
-                        <td></td>                   
-                    </tr>
-                </table> 
+                <!-- Ещё идеи для полей:
+                Характер
+                История
+                Деятельность
+                Что в карманцах -->
             </div>
         </div> <!-- /.container -->
     </main>
