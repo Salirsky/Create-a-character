@@ -169,6 +169,8 @@ class Person {
     this.age = age;
     this.gender = gender;
   }
+  // Добавить геттеры и сеттеры
+  // Добавить методы
 }
 // Расширяем исходный класс до фентезийного персонажа
 class FantasyHero extends Person {
@@ -177,6 +179,8 @@ class FantasyHero extends Person {
     this.race = race;
     this.skill = skill;
   }
+  // Добавить геттеры и сеттеры
+  // Добавить методы
 }
 
 init();
