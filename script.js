@@ -114,6 +114,7 @@ const addRemoveSkills = () => {
 const start = () => {
   dataProcessing();
   createHero();
+  addToStorage();
 };
 
 // Обрабатываем данные для передачи их в конструктор при создании нового героя
@@ -160,6 +161,17 @@ const createHero = () => {
   nodeTd[3].innerText = newHero.race;
   nodeTd[4].innerText = newHero.skill;
   nodeTd[5].innerHTML = '<button class="button button-delete">Удалить</button>';
+};
+
+// Записываем данные о герое в Local Storage
+const addToStorage = () => {
+  console.log(heroes);
+  // Создаём массив элементов списка и записываем в него данные из хранилища. Если данных нет - массив пуст.
+  let heroesData = localStorage.getItem("heroes") // Если в хранилище есть данные, то
+    ? JSON.parse(localStorage.getItem("heroes")) // Мы вернём их в heroesData
+    : []; // Иначе - страница будет пуста
+  // Переводим содержимое heroesData в формат JSON
+  heroesData = JSON.parse(localStorage.getItem("heroes"));
 };
 
 // Создаём исходный класс
